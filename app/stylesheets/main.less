@@ -1,0 +1,343 @@
+@import "../vendor/normalize/normalize.css";
+
+@import "fonts";
+@import "grid";
+@import "checkbox";
+@import "tags";
+@import "spinner";
+
+// =====
+// RESET
+// =====
+html {
+    box-sizing: border-box;
+}
+
+// Don't display ugly scrollbars in webkit
+*::-webkit-scrollbar {  
+    display: none;
+}
+
+// nie je toto negovanie predosleho
+*, *:before, *:after {
+    box-sizing: inherit;    
+}
+
+button:focus {
+    outline: 0;
+}
+
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+// =========
+// NORMALIZE
+// =========
+
+// ==================
+// VARIABLES & MIXINS
+// ==================
+@accent-color: #94D600;
+@light-color: #EBE9E6;
+@dark-color: #423D32;
+
+.serif() {
+    font-family: "Montserrat";
+}
+
+.input-border() {
+    border: 1px solid @light-color;
+}
+
+.not-selectable() {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+// ==================
+// DEFAULT TYPOGRAPHY
+// ==================
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair Display";
+    font-size: 18px;
+    color: @dark-color;
+}
+
+a {
+    color: @accent-color;
+    text-decoration: none;
+}
+
+// Use primary color as selection color
+::selection {
+    background: @accent-color;
+    color: white;
+    text-shadow: none;
+}
+
+// ==========
+// APP STYLES
+// ==========
+.plain-email {  
+    // ==================
+    // INTERACTION STATES
+    // ==================
+    .column, .actions, .menu {
+        display: none;
+    }
+
+    &.loading {
+        .loading-column {
+            display: inherit;
+        }
+    }
+
+    &.reading {
+        .email-column, .default-actions-column, .menu {
+            display: inherit;
+        }
+
+        &.keyboard-modifier {
+            .modifier-actions-column {
+                display: inherit;
+            }
+
+            .default-actions-column {
+                display: none;
+            }
+        }
+    }
+
+    &.zero {
+        .zero-column, .menu {
+            display: inherit;
+        }
+    }
+
+    &.responding {
+        .email-column, .responding-column, .menu {
+            display: inherit;
+        }
+
+        .side-by-side() 
+    }
+
+    &.delegating {
+        .email-column, .delegating-column, .menu {
+            display: inherit;
+        }
+
+        .side-by-side() 
+    }
+
+    &.composing {
+        .composing-column {
+            display: inherit;
+        } 
+    }    
+    
+    // =============
+    // MAIN CONTROLS
+    // =============
+    header {
+        .not-selectable();
+
+        font-size: 13px;
+        padding: 2em;
+
+        .logo {
+            margin-top: 0.9em;
+            margin-left: 2em;
+            display: inline-block;
+            float: left;
+        }
+
+        .dropdown {
+            .serif();
+            margin-left: 8em;
+            margin-top: 1.7em;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            float: left;
+        }
+
+        .menu {
+            float: right !important;
+            margin-top: 1.3em;
+            margin-right: 2em;
+
+            a {
+                margin-right: 1.5em;
+            }
+        }
+    }
+
+    .email-container {
+        position: absolute;
+        top: 5em;
+        bottom: 3em;
+        right: 0;
+        left: 0;
+    }
+
+    .email {
+        font-size: 13px;
+        overflow-y: scroll;
+        max-height: 100%;
+
+        .metainformation {
+            padding-top: 4em;
+            font-size: 16px;
+            .centered();
+
+            .to, .from {                
+                color: @accent-color;
+                text-decoration: none;
+                font-weight: 700;
+
+                a {
+                    margin-right: 0.5em;
+                }
+            }
+
+            .date {
+                .not-selectable();
+
+                float: right;
+            }
+        }
+
+        .subject {
+            .serif();                
+            font-size: 24px;
+            color: @dark-color;
+            margin-top: 2em;
+        }        
+
+        .body {
+            margin-top: 2em;            
+        }
+        
+        iframe {
+            width: @column-width;
+            border: none;
+            overflow: hidden;
+        }        
+
+        .value {
+            .serif();
+            padding-left: 2em;
+        }
+
+        textarea {
+            .input-border();
+            font-size: 18px;
+            width: 100%;
+            resize: none;        
+        }
+
+        .subject-write-box {
+            .subject();
+            border: none;
+        }
+
+        .recipients, .carbon-copy-recipients {            
+            padding: 1em;
+            padding-left: 2em;
+            height: 3.5em;
+        }
+        .body-write-box {
+            padding: 2em;
+            height: 500px;
+        }        
+    }
+
+    .zero-message {
+        .not-selectable();
+
+        top: 45%;
+        position: fixed;
+        width: @column-width;
+
+        .zero {
+            .serif();
+            font-size: 55px;
+            color: @dark-color;
+            text-align: center;
+        }
+
+        .zero-quote {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    footer {
+        .not-selectable();
+
+        font-size: 13px;
+        position: absolute;
+        bottom: 1em;
+        left: 0;
+        right: 0;
+        .centered();        
+    }    
+
+    .action {
+        padding: 1em 3.4em;
+        .serif();
+        color: @accent-color;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &.hidden {
+            display: none;
+        }
+
+        &.disabled {
+            color: @light-color;    
+            cursor: default;                
+        }        
+    }            
+
+    .attachment {
+        .serif();
+
+        padding: 0.4em 1em 0.4em 1em;        
+        background: white;
+        display: inline-block;                
+        border: 1px solid @accent-color;
+        border-radius: 20px;        
+        letter-spacing: 2px;
+        margin-right: 1em;
+        margin-bottom: 0.2em
+    }
+
+    .button {
+        .serif();
+        .action();
+        background: white;
+        display: inline-block;                
+        border: 2px solid @accent-color;
+        border-radius: 40px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .primary.button {
+        .button();
+        background: @accent-color;
+        color: white;
+    }    
+}

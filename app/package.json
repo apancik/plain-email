@@ -1,0 +1,37 @@
+{
+  "name": "plain-email",
+  "productName": "Plain Email",
+  "identifier": "com.plainemail",
+  "description": "An email client concept for efficient single-touch email processing workflow.",
+  "version": "0.3.0",
+  "author": "Andrej Pancik <andrej@pancik.com>",
+  "main": "background.js",
+  "license": "COPYRIGHT",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/apancik/plain-email.git"
+  },
+  "config": {
+    "target": "development"
+  },
+  "dependencies": {
+    "colors": "1.1.2",
+    "dompurify": "0.8.5",
+    "electron-dl": "1.10.0",
+    "electron-editor-context-menu": "1.1.1",
+    "electron-spell-check-provider": "1.1.0",
+    "emailjs-imap-client": "2.0.5",
+    "filesize": "3.5.6",
+    "fs-jetpack": "0.13.3",
+    "googleapis": "18.0.0",
+    "html-linkify": "1.2.2",
+    "html-to-text": "3.2.0",
+    "jquery": "2.2.4",
+    "jquery-ui": "1.10.5",
+    "jsdom": "9.12.0",
+    "mailparser": "2.0.3",
+    "moment": "2.18.1",
+    "nodemailer": "4.0.0",
+    "ssl-root-cas": "1.2.3"
+  }
+}

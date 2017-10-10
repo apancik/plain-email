@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Plain Email</title>
+
+    <link href="vendor/hint/hint.css" rel="stylesheet" type="text/css">    
+    <link href="vendor/tagit/css/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+
+    <script src="vendor/electron_boilerplate/env_config.js"></script>
+    <script src="vendor/electron_boilerplate/external_links.js"></script>    
+
+    <script src="app.js"></script>
+    
+    <script src="vendor/tagit/js/tag-it.js"></script>
+
+    <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+</head>
+<body class="plain-email loading">
+    <header class="row">
+        <img class="logo" src="images/logo.svg" alt="Plain">
+        <div class="menu">
+            <a class="js-update" href="#">
+                <img src="images/update.svg" alt="Update" title="Update">
+            </a>
+            <a class="js-compose" href="#" title="CMD+N">
+                <img src="images/compose.svg" alt="Compose">
+            </a>
+        </div>        
+    </header>
+
+    <section class="row email-container">        
+        <div class="email grid">  
+            <div class="centered metainformation row">
+                <div class="column email-column">
+                    <span class="from"></span>
+                    <span>to</span>&nbsp;
+                    <span class="to"></span>
+                                    
+                    <span class="date"></span>
+                </div>                
+            </div>
+            
+            <div class="row">
+                <div class="column loading-column">
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+
+                <div class="column email-column">
+                    <div class="subject"></div>    
+                </div>
+
+                <div class="column composing-column">
+                    <textarea class="subject-write-box" placeholder="Subject"></textarea>        
+                </div>
+
+                <div class="column responding-column">
+                    <textarea class="subject-write-box" placeholder="Subject"></textarea>                     
+                </div>                
+
+                <div class="column delegating-column">
+                    <textarea class="subject-write-box" placeholder="Subject"></textarea>
+                </div>                
+            </div>
+
+            <div class="row">                                                            
+                <div class="column email-column">
+                    <div class="attachments"></div>
+                    <div class="body"></div>                    
+                </div>
+
+                <div class="column responding-column">                    
+                    <div class="checkbox">
+                        <input type="checkbox" class="js-respond-checkbox" id="respond-checkbox">
+                        <label for="respond-checkbox">Respond to all recipients</label>
+                    </div>
+                    <textarea class="body-write-box quoted-body"></textarea>                    
+                </div>
+
+                <div class="column delegating-column">
+                    <div class="attachments"></div>
+                    <input class="recipients"></input>       
+                    <input class="carbon-copy-recipients"></input>
+                    
+                    <div class="checkbox">
+                        <input type="checkbox" class="js-loop-in-checkbox" id="loop-in-checkbox">
+                        <label for="loop-in-checkbox">Loop in including original recipients</label>              
+                    </div>
+
+                    <textarea class="body-write-box quoted-body"></textarea>
+                </div>
+
+                <div class="column composing-column">
+                    <div class="attachments"></div>                    
+                    <input class="recipients"></input>
+                    <input class="carbon-copy-recipients"></input>
+                    <textarea class="body-write-box"></textarea>
+                </div>
+
+                <div class="column zero-column">
+                    <div class="zero-message">
+                        <div class="zero">Inbox Zero</div>
+                        <div class="zero-quote"></div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </section>
+
+    <footer class="row">
+        <div class="centered grid">
+            <div class="column default-actions-column">
+                <a class="action js-archive js-first" href="#" title="Space">Done</a>
+                <a class="action js-respond-all js-second" href="#" title="Left arrow key">Respond</a>
+                <a class="action js-delegate js-third" href="#" title="Right arrow key">Delegate</a>
+                <a class="disabled action js-fourth" href="#">Defer</a> 
+                <a class="action js-unsubscribe" href="#" title="U key">Unsubscribe</a> 
+            </div>
+
+            <div class="column modifier-actions-column">
+                <a class="action js-delete js-first" href="#" title="CMD+Delete">Delete</a>
+                <a class="action js-respond js-second" href="#" title="CMD+Left arrow key">Respond directly</a>
+                <a class="action js-loop-in js-third" href="#" title="CMD+Right arrow key">Loop in</a>
+            </div>
+
+            <div class="column composing-column">
+                <a class="action js-start-reading" href="#">Back</a>
+                <a class="primary button js-compose-send" href="#" title="CMD+Enter">Send</a>
+            </div>
+
+            <div class="column responding-column">
+                <a class="action js-start-reading" href="#">Back</a>
+                <a class="primary button js-response-send" href="#" title="CMD+Enter">Respond</a>
+            </div>
+
+            <div class="column delegating-column">
+                <a class="action js-start-reading" href="#">Back</a>
+                <a class="primary button js-delegate-send" href="#" title="CMD+Enter">Delegate</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+// ==========
+// CHECKBOXES
+// ==========
+.checkbox {
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    label {
+        .not-selectable();
+
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 15px;
+        font-size: 13px;
+    }
+
+    label:before {
+        .input-border();
+
+        content: "";
+        display: inline-block;
+     
+        width: 16px;
+        height: 16px;
+     
+        margin-right: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+    }
+
+    input[type=checkbox]:checked + label:before {
+        content: "\2713";
+        font-size: 15px;
+        color: @accent-color;
+        text-align: center;
+        line-height: 15px;
+    }
+}

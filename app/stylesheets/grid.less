@@ -1,0 +1,39 @@
+// ====
+// GRID
+// ====
+@column-size: 640px;
+@gutter-width: 10px;
+@column-width: @column-size - @gutter-width * 2;
+
+.side-by-side() {
+    .grid {
+        width: @column-size * 2;
+    }
+}
+
+.centered() {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: @column-size;
+}
+
+.grid {
+    width: @column-size * 1;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.row:before, .row:after {
+    clear: both;
+    display: table;
+    content: " ";
+    *zoom: 1;
+}
+
+.column {
+    width: @column-width;
+    float: left;
+    display: inline;
+    margin-left: @gutter-width;
+    margin-right: @gutter-width;    
+}

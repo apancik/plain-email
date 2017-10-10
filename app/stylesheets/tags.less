@@ -1,0 +1,98 @@
+// =========
+// TAG INPUT
+// =========
+ul.tagit {
+    .input-border();
+
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+
+    li.tagit-choice {
+        .tagit-label {
+            &:not(a) {
+                color: @dark-color;
+            }
+        }
+
+        .tagit-close {
+            margin-right: .4em;
+            .text-icon {
+                color: @accent-color;
+                display: inline !important;
+            }
+        }
+
+        .ui-icon {
+            display: none;
+        }
+    }
+}
+
+.tagit {
+    .ui-helper-hidden-accessible {
+        clip: rect(1px,1px,1px,1px);
+        position: absolute !important;
+    }
+}
+
+// ============
+// AUTOCOMPLETE
+// ============
+/* Forked from a jQuery UI theme, so that we don't require the jQuery UI CSS as a dependency. */
+.tagit-autocomplete {
+    &.ui-autocomplete {
+        position: absolute;
+        cursor: default;
+    }
+
+    &.ui-menu {
+        list-style: none;
+        padding: 2px;
+        margin: 0;
+        display: block;
+        float: left;
+
+        .ui-menu {
+            margin-top: -3px;
+        }
+
+        .ui-menu-item {
+            margin: 0;
+            padding: 0;
+            float: left;
+            clear: left;
+            width: 100%;
+
+            a {
+                text-decoration: none;
+                display: block;
+                padding:.2em .4em;
+                padding-right: 1em;
+                line-height: 1.5;
+                zoom: 1;
+            }
+        }
+    }
+
+    &.ui-widget-content {
+        border: 1px solid #aaaaaa;
+        background: #ffffff 50% 50% repeat-x;
+        color: #222222;
+    }
+
+    .ui-state-hover, .ui-state-focus {
+        font-weight: bold;
+        color: @dark-color;
+    }
+
+    .ui-state-active { 
+        order: 1px solid #aaaaaa;
+    }
+
+    .ui-widget-content {
+        border: 1px solid #aaaaaa;
+    }
+}
