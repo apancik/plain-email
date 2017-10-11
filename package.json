@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": "UNLICENSED",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/apancik/plain-email.git"
