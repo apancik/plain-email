@@ -3,6 +3,8 @@ Plain Email
 
 An app concept for efficient one-touch email processing workflow
 
+![Screenshot](http://www.plainemail.com/images/screenshot.png)
+
 # Quick start
 The only development dependency of this project is [Node.js](https://nodejs.org). So just make sure you have it installed.
 
