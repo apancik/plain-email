@@ -24,7 +24,7 @@
     "googleapis": "18.0.0",
     "html-linkify": "1.2.2",
     "html-to-text": "3.2.0",
-    "jquery": "2.2.4",
+    "jquery": "3.5.0",
     "jquery-ui": "1.10.5",
     "jsdom": "9.12.0",
     "mailparser": "2.0.3",
