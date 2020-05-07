@@ -5,7 +5,6 @@ var Q = require("q");
 var gulp = require("gulp");
 var rollup = require("rollup");
 var less = require("gulp-less");
-var minifyCSS = require("gulp-minify-css");
 var uglify = require("rollup-plugin-uglify");
 var jetpack = require("fs-jetpack");
 
@@ -90,7 +89,6 @@ gulp.task("bundle-watch", bundleTask);
 var lessTask = function () {
     return gulp.src("app/stylesheets/main.less")
     .pipe(less())
-    .pipe(minifyCSS())
     .pipe(gulp.dest(destDir.path("stylesheets")));
 };
 gulp.task("less", ["clean"], lessTask);

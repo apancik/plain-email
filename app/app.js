@@ -21,10 +21,6 @@ var jetpack = require("fs-jetpack").cwd(app.getAppPath());
 var moment = require("moment");
 var filesize = require("filesize");
 
-// Spellcheck module
-var SpellCheckProvider = require("electron-spell-check-provider");
-var buildEditorContextMenu = remote.require("electron-editor-context-menu");
-
 // jQuery
 window.$ = window.jQuery = require("jquery");
 require("jquery-ui");
@@ -100,29 +96,6 @@ resetSelection();
 
 // Reset the selection when clicking around, before the spell-checker runs and the context menu shows.
 window.addEventListener("mousedown", resetSelection);
-
-webFrame.setSpellCheckProvider("en-US", true, new SpellCheckProvider("en-US").on("misspelling", function(suggestions) {
-	// Prime the context menu with spelling suggestions _if_ the user has selected text. Electron may sometimes re-run the spell-check provider for an outdated selection e.g. if the user right-clicks some misspelled text and then an image.
-	if (window.getSelection().toString()) {
-		selection.isMisspelled = true;
-		// Take the first three suggestions if any.
-		selection.spellingSuggestions = suggestions.slice(0, 3);
-	}
-}));
-
-window.addEventListener("contextmenu", function(event) {
-	console.log(event.target.closest("textarea, input, [contenteditable='true']"));
-
-	// Only show the spellcheck context menu in text editors.
-	if (event.target.closest("textarea, input, [contenteditable='true']")) {
-		var menu = buildEditorContextMenu(selection);
-
-		// The "contextmenu" event is emitted after "selectionchange" has fired but possibly before the visible selection has changed. Try to wait to show the menu until after that
-		setTimeout(function() {
-			menu.popup(remote.getCurrentWindow());
-		});
-	}
-});
 
 // =======
 // COOKIES

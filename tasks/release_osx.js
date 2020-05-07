@@ -1,7 +1,7 @@
 "use strict";
 
 var Q = require("q");
-var gulpUtil = require("gulp-util");
+//var gulpUtil = require("gulp-util");
 var jetpack = require("fs-jetpack");
 var asar = require("asar");
 var utils = require("./utils");
@@ -73,11 +73,11 @@ var finalize = function () {
 
 
 var codesign = function() {
-    gulpUtil.log("Signing the app...");
+    //gulpUtil.log("Signing the app...");
 
     shelljs.exec('codesign --deep --force --verbose --sign "UG3M69Y879" "' + finalAppDir.path() + '"');  
     
-    gulpUtil.log("Verifying the signature...");
+    //gulpUtil.log("Verifying the signature...");
 
     shelljs.exec('codesign --verify -vvvv "' + finalAppDir.path() + '"');
 
@@ -104,7 +104,7 @@ var packToZipFile = function () {
     // Delete ZIP file with this name if already exists
     releasesDir.remove(zipName);
 
-    gulpUtil.log("Packaging to ZIP file...");
+    //gulpUtil.log("Packaging to ZIP file...");
 
     var readyZipPath = releasesDir.path(zipName);
 
@@ -116,7 +116,7 @@ var packToZipFile = function () {
     var output = fs.createWriteStream(readyZipPath);
 
     output.on("close", function() {
-      gulpUtil.log("ZIP file (" + archive.pointer() +" bytes) ready!", readyZipPath); 
+      //gulpUtil.log("ZIP file (" + archive.pointer() +" bytes) ready!", readyZipPath); 
       deferred.resolve();
     });
 
@@ -152,7 +152,7 @@ var packToDmgFile = function () {
     // Delete DMG file with this name if already exists
     releasesDir.remove(dmgName);
 
-    gulpUtil.log("Packaging to DMG file...");
+    //gulpUtil.log("Packaging to DMG file...");
 
     var readyDmgPath = releasesDir.path(dmgName);
     appdmg({
@@ -163,7 +163,7 @@ var packToDmgFile = function () {
         console.error(err);
     })
     .on("finish", function () {
-        gulpUtil.log("DMG file ready!", readyDmgPath);        
+        //gulpUtil.log("DMG file ready!", readyDmgPath);        
         deferred.resolve();
     });
 
