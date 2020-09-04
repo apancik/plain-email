@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "colors": "1.1.2",
-    "dompurify": "0.8.5",
+    "dompurify": "2.0.7",
     "electron-dl": "1.10.0",
     "emailjs-imap-client": "2.0.5",
     "filesize": "3.5.6",
