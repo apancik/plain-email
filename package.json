@@ -17,7 +17,7 @@
     "rollup": "0.41.6",
     "rollup-plugin-uglify": "1.0.1",
     "shelljs": "0.7.7",
-    "tree-kill": "1.1.0",
+    "tree-kill": "1.2.2",
     "yargs": "7.0.2"
   },
   "scripts": {
