@@ -29,7 +29,7 @@
     "jsdom": "9.12.0",
     "mailparser": "2.0.3",
     "moment": "2.18.1",
-    "nodemailer": "4.0.0",
+    "nodemailer": "6.4.16",
     "ssl-root-cas": "1.2.3"
   }
 }
