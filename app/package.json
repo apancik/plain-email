@@ -28,7 +28,7 @@
     "jquery-ui": "1.10.5",
     "jsdom": "9.12.0",
     "mailparser": "2.0.3",
-    "moment": "2.18.1",
+    "moment": "2.29.4",
     "nodemailer": "4.0.0",
     "ssl-root-cas": "1.2.3"
   }
