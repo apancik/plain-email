@@ -11,7 +11,7 @@
     "devtron": "1.4.0",
     "electron": "1.7.8",
     "fs-jetpack": "0.13.3",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-less": "3.3.0",
     "q": "1.5.0",
     "rollup": "0.41.6",
